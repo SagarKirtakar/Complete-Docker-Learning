@@ -1,3 +1,3 @@
-FROM openjdk:28-ea-trixie
-ADD target/student-app.jar student-app.jar
-ENTRYPOINT ["java", "-jar","/student-app.jar"]
+FROM eclipse-temurin:17-jdk-alpine
+ADD target/student-demo.jar student-demo.jar
+ENTRYPOINT ["java", "-jar","/student-demo.jar"]

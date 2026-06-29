@@ -3,27 +3,33 @@ package com.sagar.student_app.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "student")
 public class Student {
 
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column
     private String name;
 
-    @Column
-    private int age;
+    private Float marks;
 
     public Student() {
     }
 
-    public int getId() {
+    public Student(Long id, String name, Float marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -33,27 +39,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public Float getMarks() {
+        return marks;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setMarks(Float marks) {
+        this.marks = marks;
     }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Student{");
-        sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", age=").append(age);
-        sb.append('}');
-        return sb.toString();
-    }
-
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
 }
