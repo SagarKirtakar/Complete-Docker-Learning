@@ -58,7 +58,7 @@
 	</dependencies>
 
 	<build>
-        <finalName>docker-jar</finalName>
+        <finalName>docker-demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
