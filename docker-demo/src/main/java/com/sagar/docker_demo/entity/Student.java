@@ -1,0 +1,49 @@
+package com.sagar.docker_demo.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "student")
+public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    private Float marks;
+
+    public Student() {
+    }
+
+    public Student(Long id, String name, Float marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Float getMarks() {
+        return marks;
+    }
+
+    public void setMarks(Float marks) {
+        this.marks = marks;
+    }
+}
